@@ -1,0 +1,12 @@
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\bin\Debug\net6.0\TCCBusiness.deps.json
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\bin\Debug\net6.0\TCCBusiness.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\bin\Debug\net6.0\TCCBusiness.pdb
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\TCCBusiness.csproj.AssemblyReference.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\TCCBusiness.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\TCCBusiness.AssemblyInfoInputs.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\TCCBusiness.AssemblyInfo.cs
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\TCCBusiness.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\TCCBusiness.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\refint\TCCBusiness.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\TCCBusiness.pdb
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCBusiness\obj\Debug\net6.0\ref\TCCBusiness.dll
