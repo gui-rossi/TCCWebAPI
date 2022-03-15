@@ -8,9 +8,6 @@ namespace TCCDomain.Entities
         public int Id { get; set; }
 
         public int User_Id { get; set; }
-        
-        [ForeignKey("ActionCategoryEntity")]
-        public int Category_Id { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -19,6 +16,8 @@ namespace TCCDomain.Entities
         
         public virtual UserEntity User { get; set; } = new();
 
+        [ForeignKey("ActionCategoryEntity")]
+        public int Category_Id { get; set; }
         public virtual ActionCategoryEntity Action_Category { get; set; } = new();
     }
 }

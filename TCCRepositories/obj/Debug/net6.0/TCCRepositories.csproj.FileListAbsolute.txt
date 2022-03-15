@@ -13,3 +13,5 @@ D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\refint\TCCRepositories.dll
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.pdb
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\ref\TCCRepositories.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\bin\Debug\net6.0\TCCRepositories.runtimeconfig.json
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.genruntimeconfig.cache

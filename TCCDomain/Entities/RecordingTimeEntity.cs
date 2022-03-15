@@ -13,5 +13,7 @@ namespace TCCDomain.Entities
         public DateTime Starting_Time { get; set; }
 
         public DateTime Ending_Time { get; set; }
+
+        public ConfigurationsEntity Configurations { get; set; } = new();
     }
 }
