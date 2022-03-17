@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TCCDomain.Entities
 {
     public class DeviceLocationEntity
     {
         public int Id { get; set; }
-        
+
+        [ForeignKey("UserEntity")]
         public int? User_Id { get; set; }
         
         public DateTime Date { get; set; }

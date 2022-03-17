@@ -32,7 +32,24 @@ namespace TCCRepositories.DatabaseContext
                 .HasOne(c => c.Configurations)
                 .WithOne(rt => rt.Recording_Time)
                 .HasForeignKey<ConfigurationsEntity>(c => c.Recording_Id);
-        }
 
+            //1:1 relationship between User & Configurations
+            modelBuilder.Entity<UserEntity>()
+                .HasOne(c => c.Configurations)
+                .WithOne(u => u.User)
+                .HasForeignKey<ConfigurationsEntity>(c => c.User_Id);
+
+            //1:n relationship between User & UserHistory
+            modelBuilder.Entity<UserHistoryEntity>()
+                .HasOne(uh => uh.User)
+                .WithMany(u => u.User_History)
+                .HasForeignKey(uh => uh.User_Id);
+
+            //1:n relationship between User & DeviceLocation
+            modelBuilder.Entity<DeviceLocationEntity>()
+                .HasOne(dl => dl.User)
+                .WithMany(u => u.Device_Locations)
+                .HasForeignKey(dl => dl.User_Id);
+        }
     }
 }

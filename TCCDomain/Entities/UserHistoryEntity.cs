@@ -7,6 +7,7 @@ namespace TCCDomain.Entities
     {
         public int Id { get; set; }
 
+        [ForeignKey("UserEntity")]
         public int User_Id { get; set; }
 
         public DateTime Date { get; set; }
