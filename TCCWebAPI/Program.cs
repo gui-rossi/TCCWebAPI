@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using TCCBusiness.ServicesExtension;
-using TCCRepositories.DatabaseContext;
+using TCCRepositories.TCCContext;
 
 var builder = WebApplication.CreateBuilder(args);
 

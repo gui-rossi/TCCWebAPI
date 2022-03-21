@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TCCDomain.Entities;
 
-namespace TCCRepositories.DatabaseContext
+namespace TCCRepositories.TCCContext
 {
     public class DatabaseContext : DbContext
     {

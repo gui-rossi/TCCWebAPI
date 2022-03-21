@@ -4,7 +4,7 @@ namespace TCCDomain.Entities
 {
     public class ActionCategoryEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         [MaxLength(100)]
         public string Category { get; set; } = string.Empty;

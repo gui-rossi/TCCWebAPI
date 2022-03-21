@@ -868,6 +868,9 @@
       "TCCDomain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.3"
+        },
         "compile": {
           "bin/placeholder/TCCDomain.dll": {}
         },

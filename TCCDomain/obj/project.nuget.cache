@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kWViXZodJjeb5j2nKkMOwnHgHN3kw7/hoJEBgSUug8l3Zo/JXOCmCW4u2lIpYpIwhczOyHDutzFfyR371wq0OA==",
+  "dgSpecHash": "jAJ7Y/hRgtUi42cMMsSVA54U5s7LYQvS9GTXxTNJmf+lJFWoyivEmo4RFPo6fmYCYyNNtLph/jWWwNoSmx4JTw==",
   "success": true,
   "projectFilePath": "D:\\Microsoft Visual Studio\\TCCWebAPI\\TCCWebAPI\\TCCDomain\\TCCDomain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\guilh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

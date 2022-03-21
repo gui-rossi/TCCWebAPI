@@ -4,11 +4,13 @@ namespace TCCDomain.Entities
 {
     public class ConfigurationsEntity
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         [ForeignKey("UserEntity")]
-        public int User_Id { get; set; }
+        public Guid User_Id { get; set; }
 
         [ForeignKey("RecordingTimeEntity")]
-        public int Recording_Id { get; set; }
+        public Guid Recording_Id { get; set; }
 
         public bool IsLampOn { get; set; }
 

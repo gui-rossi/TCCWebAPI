@@ -8,7 +8,7 @@ namespace TCCDomain.Entities
 {
     public  class RecordingTimeEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public DateTime Starting_Time { get; set; }
 

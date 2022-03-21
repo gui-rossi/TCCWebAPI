@@ -5,10 +5,10 @@ namespace TCCDomain.Entities
 {
     public class DeviceLocationEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         [ForeignKey("UserEntity")]
-        public int? User_Id { get; set; }
+        public Guid? User_Id { get; set; }
         
         public DateTime Date { get; set; }
 
