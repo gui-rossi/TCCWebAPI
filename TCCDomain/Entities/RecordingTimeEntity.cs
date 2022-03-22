@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCCDomain.Entities
 {
-    public  class RecordingTimeEntity
+    public  class RecordingTimeEntity : BaseEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 

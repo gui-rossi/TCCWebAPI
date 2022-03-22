@@ -2,7 +2,7 @@
 
 namespace TCCDomain.Entities
 {
-    public class ActionCategoryEntity
+    public class ActionCategoryEntity : BaseEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 

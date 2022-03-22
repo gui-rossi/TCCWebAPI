@@ -1,0 +1,6 @@
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.csproj.AssemblyReference.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.AssemblyInfoInputs.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.AssemblyInfo.cs
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.MvcApplicationPartsAssemblyInfo.cache

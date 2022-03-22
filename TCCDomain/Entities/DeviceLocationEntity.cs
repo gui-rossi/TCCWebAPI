@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TCCDomain.Entities
 {
-    public class DeviceLocationEntity
+    public class DeviceLocationEntity : BaseEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 

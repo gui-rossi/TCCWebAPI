@@ -2,7 +2,7 @@
 
 namespace TCCDomain.Entities
 {
-    public class ConfigurationsEntity
+    public class ConfigurationsEntity : BaseEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 

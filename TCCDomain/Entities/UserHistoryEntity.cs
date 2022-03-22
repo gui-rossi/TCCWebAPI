@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TCCDomain.Entities
 {
-    public class UserHistoryEntity
+    public class UserHistoryEntity : BaseEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 
