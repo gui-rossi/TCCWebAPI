@@ -3,3 +3,15 @@ D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.AssemblyInfoInputs.cache
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.AssemblyInfo.cs
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\bin\Debug\net6.0\TCCRepositories.deps.json
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\bin\Debug\net6.0\TCCRepositories.runtimeconfig.json
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\bin\Debug\net6.0\TCCRepositories.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\bin\Debug\net6.0\TCCRepositories.pdb
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\bin\Debug\net6.0\TCCDomain.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\bin\Debug\net6.0\TCCDomain.pdb
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.csproj.CopyComplete
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\refint\TCCRepositories.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.pdb
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\TCCRepositories.genruntimeconfig.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCRepositories\obj\Debug\net6.0\ref\TCCRepositories.dll

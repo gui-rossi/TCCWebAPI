@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCCDomain.Entities
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
     }
 }

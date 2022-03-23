@@ -9,10 +9,13 @@ namespace TCCRepositories.Interfaces
 {
     public interface IGenericRepository<T> where T: BaseEntity
     {
-        Task<IEnumerable<T>> GetAll();
-        Task<T> Get(long id);
-        Task Insert(T entity);
-        Task Delete(T entity);
-        Task Update(T entity);
+        Task<IEnumerable<T>> SelectAllAsync();
+        Task<T> FindAsync(object key);
+        void Insert(T entity);
+        void Insert(IEnumerable<T> entities);
+        void Delete(IEnumerable<T> entities);
+        void Update(T entity);
+        void Update(IEnumerable<T> entities);
+        Task SaveChangesAsync();
     }
 }

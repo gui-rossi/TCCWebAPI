@@ -6,47 +6,86 @@ using System.Text;
 using System.Threading.Tasks;
 using TCCDomain.Entities;
 using TCCRepositories.Interfaces;
+using TCCRepositories.TCCContext;
 
 namespace TCCRepositories.DataRepository
 {
-    internal class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
+    internal class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity, new()
     {
-        private DbSet<T> _entities;
+        private readonly DatabaseContext _db;
+        private readonly DbSet<T> _dbSet;
 
-        public GenericRepository()
+        public GenericRepository(DatabaseContext context)
         {
+            if (context is null) throw new ArgumentNullException("Null Database context");
 
+            _db = context;
+            _dbSet = _db.Set<T>();
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public virtual async Task<IEnumerable<T>> SelectAllAsync()
         {
-            return await _entities
+            return await _dbSet
                 .AsNoTracking()
-                .ToListAsync();
+                .ToArrayAsync();
         }
 
-        public async Task<T> Get (long id)
+        public virtual async Task<T> FindAsync(object key)
         {
-            return await _entities
-                .AsNoTracking()
-                .SingleOrDefaultAsync(s => s.Id == id);
+            if (key is null) throw new ArgumentNullException(nameof(key) + "is null");
+
+            var entity = await _dbSet.FindAsync(key);
+
+            ValidateEntity(entity);
+
+            return entity;
         }
 
-        public async Task Insert (T entity)
+        public void Insert(T entity)
         {
-            return await _entities.AddAsync(entity);
+            ValidateEntity(entity);
+            _dbSet.AddAsync(entity);
         }
 
-        public async Task Delete(T entity)
+        public void Insert(IEnumerable<T> entities)
         {
-
-            return await _entities.Remove(entity);
+            ValidateEntities(entities);
+            _dbSet.AddRangeAsync(entities);
         }
 
-        public async Task Update(T entity)
+        public void Delete(IEnumerable<T> entities)
         {
+            ValidateEntities(entities);
+            _dbSet.RemoveRange(entities);
+        }
 
-            return await _entities.AddAsync(entity);
+        public void Update(T entity)
+        {
+            ValidateEntity(entity);
+            _dbSet.Update(entity);
+        }
+
+        public void Update(IEnumerable<T> entities)
+        {
+            ValidateEntities(entities);
+            _dbSet.UpdateRange(entities);
+        }
+
+        public Task SaveChangesAsync()
+        {
+            return _db.SaveChangesAsync();
+        }
+
+        private void ValidateEntity(T entity)
+        {
+            if (entity is null) throw new ArgumentNullException("Null entity"); ;
+        }
+
+        private void ValidateEntities(IEnumerable<T> entities)
+        {
+            if (entities is null) throw new ArgumentNullException("Null array of entities"); ;
+            if (!entities.Any()) throw new ArgumentNullException("Empty array of entities"); ;
+            if (entities.Any(e => e is null)) throw new ArgumentNullException("Null entity inside array of entities"); ;
         }
     }
 }
