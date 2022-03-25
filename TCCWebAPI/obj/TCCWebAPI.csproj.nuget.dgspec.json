@@ -27,7 +27,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Microsoft Visual Studio\\TCCWebAPI\\TCCWebAPI\\TCCRepositories\\TCCRepositories.csproj": {
+                "projectPath": "D:\\Microsoft Visual Studio\\TCCWebAPI\\TCCWebAPI\\TCCRepositories\\TCCRepositories.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -40,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[6.0.0, )"

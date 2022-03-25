@@ -14,10 +14,10 @@ namespace TCCWebAPI.Controllers
             _service = service;
         }
 
-        [HttpPost("registerUser")]
-        string RegisterUser(/*[FromBody]*/string email, string password)
+        [HttpPost("registerUser/{email}/{password}")]
+        public async Task RegisterUser(string email, string password)
         {
-            return _service.AddUserAsync(email, password);
+            await _service.AddUserAsync(email, password);
         }
 
         /// <summary>

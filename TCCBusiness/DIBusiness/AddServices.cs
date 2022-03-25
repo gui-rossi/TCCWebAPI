@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using TCCBusiness.Interfaces;
 using TCCBusiness.Services;
 
-namespace TCCBusiness.ServicesExtension
+namespace TCCBusiness.DIBusiness
 {
-    public class ServicesExtension
+    public static class DIBusiness
     {
         public static void AddServices(IServiceCollection services)
         {

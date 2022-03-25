@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCCDomain.Entities
 {
-    public abstract class BaseEntity : IBaseEntity
+    internal interface IBaseEntity
     {
     }
 }

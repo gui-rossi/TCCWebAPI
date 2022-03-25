@@ -1,22 +1,46 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TCCBusiness.Interfaces;
+using TCCDomain.Entities;
+using TCCDomain.ViewModels;
+using TCCRepositories.Interfaces;
 
 namespace TCCBusiness.Services
 {
     internal class UserService : IUserService
     {
-        public UserService()
-        {
+        private readonly IUserRepository _repository;
 
+        public UserService(IUserRepository repository)
+        {
+            _repository = repository;
         }
 
-        public string AddUserAsync(string email, string password)
+        public async Task AddUserAsync(string email, string password)
         {
-            return "deu boa";
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                throw new ArgumentNullException(nameof(email) + " or " + nameof(password) + " null");
+
+            if (password.Count() <= 4) 
+                throw new ArgumentNullException("Password has less than 5 characters");
+
+            if (!new EmailAddressAttribute().IsValid(email))
+                throw new ArgumentNullException("Invalid e-mail");
+
+            var userEntity = new UserEntity
+            {
+                Email = email,
+                Password = password,
+            };
+
+            _repository.Insert(userEntity);
+
+            await _repository.SaveChangesAsync();
         }
     }
 }

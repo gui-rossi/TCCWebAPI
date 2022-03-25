@@ -79,3 +79,4 @@ D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\refint
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.pdb
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.genruntimeconfig.cache
 D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\ref\TCCWebAPI.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCWebAPI\obj\Debug\net6.0\TCCWebAPI.MvcApplicationPartsAssemblyInfo.cs

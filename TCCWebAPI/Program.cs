@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using TCCBusiness.ServicesExtension;
+using TCCBusiness.DIBusiness;
+using TCCRepositories.DIRepository;
 using TCCRepositories.TCCContext;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +24,8 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-ServicesExtension.AddServices(builder.Services);
+DIBusiness.AddServices(builder.Services);
+DIRepository.AddRepositories(builder.Services);
 
 var app = builder.Build();
 
