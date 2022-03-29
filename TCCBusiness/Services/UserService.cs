@@ -52,7 +52,7 @@ namespace TCCBusiness.Services
 
             UserEntity userEntity = await _repository.FindByEmailAsync(userVM.email);
 
-            //fazer a entidade receber a vm e fazer update na base
+            //fazer a entidade receber a VM e fazer update na base
         }
     }
 }
