@@ -1,0 +1,12 @@
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\bin\Debug\net6.0\TCCDomain.deps.json
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\bin\Debug\net6.0\TCCDomain.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\bin\Debug\net6.0\TCCDomain.pdb
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\TCCDomain.csproj.AssemblyReference.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\TCCDomain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\TCCDomain.AssemblyInfoInputs.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\TCCDomain.AssemblyInfo.cs
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\TCCDomain.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\TCCDomain.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\refint\TCCDomain.dll
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\TCCDomain.pdb
+D:\Microsoft Visual Studio\TCCWebAPI\TCCWebAPI\TCCDomain\obj\Debug\net6.0\ref\TCCDomain.dll
