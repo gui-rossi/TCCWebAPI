@@ -10,5 +10,6 @@ namespace TCCBusiness.Interfaces
     public interface IUserService
     {
         Task AddUserAsync(string email, string password);
+        Task UpdateUserAsync(UserViewModel userVM);
     }
 }

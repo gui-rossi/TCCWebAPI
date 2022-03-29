@@ -35,7 +35,7 @@ namespace TCCBusiness.Services
             if (password.Count() <= 4)
                 throw new ArgumentNullException("Password has less than 5 characters");
 
-            var userEntity = new UserEntity
+            UserEntity userEntity = new UserEntity
             {
                 Email = email,
                 Password = password,
@@ -44,6 +44,15 @@ namespace TCCBusiness.Services
             _repository.Insert(userEntity);
 
             await _repository.SaveChangesAsync();
+        }
+
+        public async Task UpdateUserAsync(UserViewModel userVM)
+        {
+            if (userVM is null) throw new ArgumentNullException("Null userVM object");
+
+            UserEntity userEntity = await _repository.FindByEmailAsync(userVM.email);
+
+            //fazer a entidade receber a vm e fazer update na base
         }
     }
 }

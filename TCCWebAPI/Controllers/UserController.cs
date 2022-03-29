@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TCCBusiness.Interfaces;
+using TCCDomain.ViewModels;
 
 namespace TCCWebAPI.Controllers
 {
@@ -18,6 +19,12 @@ namespace TCCWebAPI.Controllers
         public async Task RegisterUser(string email, string password)
         {
             await _service.AddUserAsync(email, password);
+        }
+
+        [HttpPut("updateUser")]
+        public async Task RegisterUser([FromBody] UserViewModel userVM)
+        {
+            await _service.UpdateUserAsync(userVM);
         }
     }
 }

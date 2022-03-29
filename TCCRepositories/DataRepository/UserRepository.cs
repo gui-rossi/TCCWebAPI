@@ -16,7 +16,11 @@ namespace TCCRepositories.DataRepository
 
         public async Task<UserEntity> FindByEmailAsync(string email)
         {
-            return await _db.User.FirstOrDefaultAsync(u => u.Email == email);
+            return await _db.User
+                    .Include(c => c.Configurations)
+                    .Include(d => d.Device_Locations)
+                    .Include(uh => uh.User_History)
+                    .FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 }
