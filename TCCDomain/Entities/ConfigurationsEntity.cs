@@ -12,13 +12,13 @@ namespace TCCDomain.Entities
         [ForeignKey("RecordingTimeEntity")]
         public Guid Recording_Id { get; set; }
 
-        public bool IsLampOn { get; set; }
+        public bool IsLampOn { get; set; } = false;
 
-        public bool Receive_Notifications { get; set; }
+        public bool Receive_Notifications { get; set; } = true;
 
-        public string Battery_Percentage { get; set; } = string.Empty;
+        public string Battery_Percentage { get; set; } = "100%";
 
-        public virtual UserEntity User { get; set; } = new();
+        public virtual UserEntity User { get; set; }
 
         public virtual RecordingTimeEntity Recording_Time { get; set; } = new();
     }

@@ -4,7 +4,7 @@ using TCCBusiness.Interfaces;
 namespace TCCWebAPI.Controllers
 {
     [Controller]
-    [Route("api/{controller}")]
+    [Route("api/")]
     public class UserController : Controller
     {
         private readonly IUserService _service;
@@ -18,17 +18,6 @@ namespace TCCWebAPI.Controllers
         public async Task RegisterUser(string email, string password)
         {
             await _service.AddUserAsync(email, password);
-        }
-
-        /// <summary>
-        /// Deletes a specific TodoItem.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpDelete("deleteUser/{id}")]
-        public async Task<IActionResult> Delete(long id)
-        {
-            return NoContent();
         }
     }
 }

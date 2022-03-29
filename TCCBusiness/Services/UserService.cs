@@ -26,11 +26,14 @@ namespace TCCBusiness.Services
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
                 throw new ArgumentNullException(nameof(email) + " or " + nameof(password) + " null");
 
-            if (password.Count() <= 4) 
-                throw new ArgumentNullException("Password has less than 5 characters");
-
             if (!new EmailAddressAttribute().IsValid(email))
                 throw new ArgumentNullException("Invalid e-mail");
+
+            if (await _repository.FindByEmailAsync(email) is not null)
+                throw new ArgumentNullException("E-mail already registered");
+
+            if (password.Count() <= 4)
+                throw new ArgumentNullException("Password has less than 5 characters");
 
             var userEntity = new UserEntity
             {

@@ -12,8 +12,8 @@ namespace TCCRepositories.DataRepository
 {
     internal class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity, new()
     {
-        private readonly DatabaseContext _db;
-        private readonly DbSet<T> _dbSet;
+        protected readonly DatabaseContext _db;
+        protected readonly DbSet<T> _dbSet;
 
         public GenericRepository(DatabaseContext context)
         {

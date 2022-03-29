@@ -10,10 +10,10 @@ namespace TCCDomain.Entities
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 
-        public DateTime Starting_Time { get; set; }
+        public DateTime Starting_Time { get; set; } = new DateTime(2022, 04, 01, 08, 00, 00); // 08:00:00 04/01/2022
 
-        public DateTime Ending_Time { get; set; }
+        public DateTime Ending_Time { get; set; } = new DateTime(2022, 04, 01, 17, 00, 00); // 17:00:00 04/01/2022
 
-        public ConfigurationsEntity Configurations { get; set; } = new();
+        public ConfigurationsEntity Configurations { get; set; }
     }
 }

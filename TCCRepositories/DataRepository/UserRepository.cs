@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,11 @@ namespace TCCRepositories.DataRepository
 {
     internal class UserRepository : GenericRepository<UserEntity>, IUserRepository
     {
-        public UserRepository(DatabaseContext context) : base(context)
-        {
+        public UserRepository(DatabaseContext context) : base(context) {}
 
+        public async Task<UserEntity> FindByEmailAsync(string email)
+        {
+            return await _db.User.FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 }
