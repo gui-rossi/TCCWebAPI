@@ -11,5 +11,7 @@ namespace TCCBusiness.Interfaces
     {
         Task AddUserAsync(string email, string password);
         Task UpdateUserAsync(UserViewModel userVM);
+        Task<UserViewModel> FetchUserAsync(string email, string password);
+
     }
 }

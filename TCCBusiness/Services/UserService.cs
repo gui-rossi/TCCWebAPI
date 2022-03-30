@@ -21,6 +21,23 @@ namespace TCCBusiness.Services
             _repository = repository;
         }
 
+        public async Task<UserViewModel> FetchUserAsync(string email, string password)
+        {
+            if (string.IsNullOrEmpty(email)) throw new ArgumentNullException("Null or empty Email");
+
+            if (string.IsNullOrEmpty(password)) throw new ArgumentNullException("Null or empty Password");
+
+            UserEntity entity = await _repository.FindByEmailAsync(email);
+
+            if (entity is null) throw new NullReferenceException("Email not registered");
+
+            if (entity.Password != password) throw new ArgumentException("Invalid Password");
+
+            //map entity into view model
+
+            return entity;
+        }
+
         public async Task AddUserAsync(string email, string password)
         {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
@@ -50,9 +67,15 @@ namespace TCCBusiness.Services
         {
             if (userVM is null) throw new ArgumentNullException("Null userVM object");
 
-            UserEntity userEntity = await _repository.FindByEmailAsync(userVM.email);
+            UserEntity userEntity = await _repository.FindAsync(userVM.id);
 
-            //fazer a entidade receber a VM e fazer update na base
+            userEntity.Cel = userVM.cel;
+            userEntity.Worker_Count = userVM.worker_count;
+            userEntity.Name = userVM.name;
+
+            _repository.Update(userEntity);
+
+            await _repository.SaveChangesAsync();
         }
     }
 }

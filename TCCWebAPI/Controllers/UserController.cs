@@ -15,14 +15,20 @@ namespace TCCWebAPI.Controllers
             _service = service;
         }
 
+        [HttpGet("fetchUser/{email}/{password}")]
+        public async Task<UserViewModel> LoginUser(string email, string password)
+        {
+            return await _service.FetchUserAsync(email);
+        }
+
         [HttpPost("registerUser/{email}/{password}")]
-        public async Task RegisterUser(string email, string password)
+        public async Task PostUser(string email, string password)
         {
             await _service.AddUserAsync(email, password);
         }
 
         [HttpPut("updateUser")]
-        public async Task RegisterUser([FromBody] UserViewModel userVM)
+        public async Task PutUser([FromBody] UserViewModel userVM)
         {
             await _service.UpdateUserAsync(userVM);
         }
