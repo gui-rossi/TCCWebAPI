@@ -19,5 +19,7 @@ namespace TCCDomain.ViewModels
         public string? cel;
 
         public int? worker_count;
+
+        ConfigurationsViewModel? configurations;
     }
 }

@@ -14,6 +14,7 @@ namespace TCCBusiness.DIBusiness
         public static void AddServices(IServiceCollection services)
         {
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IConfigurationsService, ConfigurationsService>();
         }
     }
 }
