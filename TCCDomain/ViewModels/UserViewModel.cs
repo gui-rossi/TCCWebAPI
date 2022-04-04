@@ -20,6 +20,18 @@ namespace TCCDomain.ViewModels
 
         public int? worker_count;
 
-        ConfigurationsViewModel? configurations;
+        //ConfigurationsViewModel configurations;
+
+        public UserViewModel(Guid Id, string Email, string Password, string? Name, string? Cel, int? Worker_Count
+            /*,ConfigurationsViewModel Configurations*/)
+        {
+            id = Id;
+            email = Email;
+            password = Password;
+            name = Name;
+            cel = Cel;
+            worker_count = Worker_Count;
+            //configurations = Configurations;
+        }
     }
 }

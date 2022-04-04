@@ -15,6 +15,12 @@ namespace TCCWebAPI.Controllers
             _service = service;
         }
 
+        [HttpGet("IsApiUp")]
+        public bool IsApiUp()
+        {
+            return true;
+        }
+
         [HttpGet("fetchUser/{email}/{password}")]
         public async Task<UserViewModel> LoginUser(string email, string password)
         {

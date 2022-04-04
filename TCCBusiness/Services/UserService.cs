@@ -35,7 +35,9 @@ namespace TCCBusiness.Services
 
             //map entity into view model
 
-            return entity;
+            UserViewModel userVM = new UserViewModel(entity.Id, entity.Email, entity.Password, entity.Name, entity.Cel, entity.Worker_Count);
+
+            return userVM;
         }
 
         public async Task AddUserAsync(string email, string password)
