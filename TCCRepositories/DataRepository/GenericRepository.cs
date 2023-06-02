@@ -23,6 +23,13 @@ namespace TCCRepositories.DataRepository
             _dbSet = _db.Set<T>();
         }
 
+        public virtual async Task<IEnumerable<T>> SelectAllAsync(Func<IQueryable<T>, IQueryable<T>> query)
+        {
+            IQueryable<T> result = query(_dbSet);
+
+            return await result.ToListAsync();
+        }
+
         public virtual async Task<IEnumerable<T>> SelectAllAsync()
         {
             return await _dbSet

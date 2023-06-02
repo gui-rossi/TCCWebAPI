@@ -9,6 +9,7 @@ namespace TCCRepositories.Interfaces
 {
     public interface IGenericRepository<T> where T: BaseEntity
     {
+        Task<IEnumerable<T>> SelectAllAsync(Func<IQueryable<T>, IQueryable<T>> query);
         Task<IEnumerable<T>> SelectAllAsync();
         Task<T> FindAsync(object key);
         void Insert(T entity);

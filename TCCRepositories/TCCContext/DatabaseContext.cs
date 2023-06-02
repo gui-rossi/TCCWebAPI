@@ -16,11 +16,15 @@ namespace TCCRepositories.TCCContext
         public DbSet<DeviceLocationEntity> DeviceLocation { get; set; }
         public DbSet<ConfigurationsEntity> Configurations { get; set; }
         public DbSet<ActionCategoryEntity> ActionCategory { get; set; }
+        public DbSet<CameraEntity> Camera { get; set; }
+
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         protected override void OnModelCreating (ModelBuilder modelBuilder)
         {
+            //ADD CAMERA DATAMODEL
+
             //1:1 relationship between ActionCategory & UserHistory
             modelBuilder.Entity<ActionCategoryEntity>()
                 .HasOne(ac => ac.User_History)
