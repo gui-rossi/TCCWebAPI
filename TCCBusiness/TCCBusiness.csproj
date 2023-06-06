@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TCCRepositories\TCCRepositories.csproj" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>

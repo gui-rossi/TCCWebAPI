@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using TCCBusiness;
 using TCCBusiness.DIBusiness;
 using TCCRepositories.DIRepository;
 using TCCRepositories.TCCContext;
@@ -13,6 +14,18 @@ builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(b
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSignalR(o => o.EnableDetailedErrors = true);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -29,6 +42,8 @@ DIRepository.AddRepositories(builder.Services);
 
 var app = builder.Build();
 
+app.UseCors("AllowAll"); 
+app.UseRouting();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -40,6 +55,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.MapHub<ChatHub>("/ChatHub");
 
 app.MapControllers();
 
