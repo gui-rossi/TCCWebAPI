@@ -22,18 +22,18 @@ namespace TCCWebAPI.Controllers
             return true;
         }
 
-        [HttpPost("AddStatus")]
-        public async Task PostStatus([FromBody] CameraVM camera)
-        {
-            await _service.AddStatusAsync(camera);
-        }
+        //[HttpPost("AddStatus")]
+        //public async Task PostStatus([FromBody] CameraVM camera)
+        //{
+        //    await _service.AddStatusAsync(camera);
+        //}
 
-        [HttpGet("FetchStatus")]
-        public async Task<IEnumerable<CameraVM>> GetStatus()
-        {
-            var rval = await _service.FetchStatusAsync();
+        //[HttpGet("FetchStatus")]
+        //public async Task<IEnumerable<CameraVM>> GetStatus()
+        //{
+        //    var rval = await _service.FetchStatusAsync();
 
-            return rval;
-        }
+        //    return rval;
+        //}
     }
 }
