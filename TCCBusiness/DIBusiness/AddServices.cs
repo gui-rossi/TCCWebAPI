@@ -13,7 +13,9 @@ namespace TCCBusiness.DIBusiness
     {
         public static void AddServices(IServiceCollection services)
         {
-            //services.AddTransient<ICameraService, CameraService>();
+            services.AddTransient<IConfigService, ConfigService>();
+            services.AddTransient<IEventService, EventService>();
+            services.AddTransient<IChatHub, ChatHub>();
         }
     }
 }
