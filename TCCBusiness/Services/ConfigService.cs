@@ -13,15 +13,19 @@ namespace TCCBusiness.Services
     internal class ConfigService : IConfigService
     {
         private readonly IGenericRepository<ConfigEntity> _repository;
+        private readonly IChatHub _chatHub;
 
-        public ConfigService(IGenericRepository<ConfigEntity> repository)
+        public ConfigService(IGenericRepository<ConfigEntity> repository, IChatHub chatHub)
         {
             _repository = repository;
+            _chatHub = chatHub;
         }
 
         public Task ChangeConfigAsync(ConfigEntity config)
         {
             _repository.Update(config);
+
+            _chatHub.SendConfigs(config);
 
             return Task.CompletedTask;
         }
