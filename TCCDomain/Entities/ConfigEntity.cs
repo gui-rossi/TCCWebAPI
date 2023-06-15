@@ -16,8 +16,10 @@ namespace TCCDomain.Entities
 
         public bool Active { get; set; }
 
-        public DateTime StartTime { get; set; }
+        [MaxLength(100)]
+        public string? StartTime { get; set; }
 
-        public DateTime EndTime { get; set; }
+        [MaxLength(100)]
+        public string? EndTime { get; set; }
     }
 }

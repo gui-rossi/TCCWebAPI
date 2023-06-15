@@ -21,13 +21,17 @@ namespace TCCBusiness.Services
             _chatHub = chatHub;
         }
 
-        public Task ChangeConfigAsync(IEnumerable<ConfigEntity> config)
+        public async Task ChangeConfigAsync(IEnumerable<ConfigEntity> config)
         {
-            _repository.Update(config);
+            var entities = await _repository.SelectAllAsync();
+
+            entities = config;
+
+            _repository.Update(entities);
+
+            await _repository.SaveChangesAsync();
 
             _chatHub.SendConfigs(config);
-
-            return Task.CompletedTask;
         }
 
         public async Task<IEnumerable<ConfigEntity>> FetchConfigAsync()
