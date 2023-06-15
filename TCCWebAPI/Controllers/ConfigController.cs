@@ -22,9 +22,9 @@ namespace TCCWebAPI.Controllers
         }
 
         [HttpPut("ChangeConfig")]
-        public async Task ModifyConfig([FromBody] ConfigEntity config)
+        public async Task ModifyConfig([FromBody] IEnumerable<ConfigEntity> configs)
         {
-            await _service.ChangeConfigAsync(config);
+            await _service.ChangeConfigAsync(configs);
         }
 
         [HttpGet("FetchConfigs")]

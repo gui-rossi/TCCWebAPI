@@ -16,7 +16,7 @@ namespace TCCBusiness
         }
 
         //IMPLEMENTAR NA RASP
-        public async Task SendConfigs(ConfigEntity config)
+        public async Task SendConfigs(IEnumerable<ConfigEntity> config)
         {
             await Clients.All.SendAsync("SendConfigs", config);
         }
@@ -27,7 +27,6 @@ namespace TCCBusiness
             await Clients.All.SendAsync("RequestImage");
         }
 
-        //IMPLEMENTAR NA UI
         public async Task SendImageToUI(string base64)
         {
             await Clients.Others.SendAsync("ReceiveImage", base64);
@@ -39,7 +38,6 @@ namespace TCCBusiness
             await Clients.All.SendAsync("ReceiveInfos");
         }
 
-        //IMPLEMENTAR NA UI
         public async Task SendInfosToUI(string gps, string battery)
         {
             await Clients.Others.SendAsync("ReceiveInfos", gps, battery);

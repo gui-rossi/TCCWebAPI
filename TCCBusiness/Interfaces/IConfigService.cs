@@ -9,7 +9,7 @@ namespace TCCBusiness.Interfaces
 {
     public interface IConfigService
     {
-        Task ChangeConfigAsync(ConfigEntity config);
+        Task ChangeConfigAsync(IEnumerable<ConfigEntity> config);
         Task<IEnumerable<ConfigEntity>> FetchConfigAsync();
 
     }

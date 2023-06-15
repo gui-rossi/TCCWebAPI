@@ -15,7 +15,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSignalR(o => o.EnableDetailedErrors = true);
 
 builder.Services.AddCors(options =>
 {
@@ -23,9 +22,13 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyOrigin()
         .AllowAnyHeader()
-        .AllowAnyMethod();
+        .AllowAnyMethod()
+        .AllowCredentials()
+        .WithOrigins("http://localhost:8080");
     });
 });
+
+builder.Services.AddSignalR(o => o.EnableDetailedErrors = true);
 
 builder.Services.AddSwaggerGen(options =>
 {

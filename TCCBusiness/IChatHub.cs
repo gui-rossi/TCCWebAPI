@@ -11,7 +11,7 @@ namespace TCCBusiness
     {
         Task SendMessage(string user, string message);
 
-        Task SendConfigs(ConfigEntity config);
+        Task SendConfigs(IEnumerable<ConfigEntity> config);
 
         Task RequestImageToRaspberry();
 
