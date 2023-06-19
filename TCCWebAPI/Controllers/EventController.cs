@@ -27,5 +27,11 @@ namespace TCCWebAPI.Controllers
         {
             _service.FetchInfosAsync();
         }
+
+        [HttpGet("GetHistory")]
+        public async Task<IEnumerable<EventLogEntity>> GetHistory()
+        {
+            return await _service.GetHistory();
+        }
     }
 }

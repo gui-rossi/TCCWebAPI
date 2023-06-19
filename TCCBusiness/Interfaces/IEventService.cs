@@ -11,5 +11,7 @@ namespace TCCBusiness.Interfaces
     {
         void FetchImageAsync();
         void FetchInfosAsync();
+
+        Task<IEnumerable<EventLogEntity>> GetHistory();
     }
 }
