@@ -8,13 +8,12 @@ using TCCRepositories.TCCContext;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+//$env:ASPNETCORE_ENVIRONMENT='Production'
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 
 builder.Services.AddCors(options =>
 {
@@ -24,7 +23,7 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowCredentials()
-        .WithOrigins("http://localhost:8080");
+        .WithOrigins(builder.Configuration["ConnectionStrings:SignalR"]);
     });
 });
 
@@ -48,12 +47,8 @@ var app = builder.Build();
 app.UseCors("AllowAll"); 
 app.UseRouting();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
