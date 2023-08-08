@@ -22,10 +22,22 @@ namespace TCCWebAPI.Controllers
             _service.FetchImageAsync();
         }
 
+        [HttpPost("SendImage")]
+        public void SendImage(string base64Img)
+        {
+            _service.SendImageAsync(base64Img);
+        }
+
         [HttpGet("RequestInfos")]
         public void RequestInfos()
         {
             _service.FetchInfosAsync();
+        }
+
+        [HttpGet("SendInfos")]
+        public void SendInfos([FromBody] IEnumerable<InfoEntity> infos)
+        {
+            _service.SendInfosAsync(infos);
         }
 
         [HttpGet("GetHistory")]

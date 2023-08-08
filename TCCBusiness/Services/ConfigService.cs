@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.SignalR;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,12 @@ namespace TCCBusiness.Services
     internal class ConfigService : IConfigService
     {
         private readonly IGenericRepository<ConfigEntity> _repository;
-        private readonly IChatHub _chatHub;
+        private readonly IHubContext<ChatHub> _hubContext;
 
-        public ConfigService(IGenericRepository<ConfigEntity> repository, IChatHub chatHub)
+        public ConfigService(IGenericRepository<ConfigEntity> repository, IHubContext<ChatHub> hubContext)
         {
             _repository = repository;
-            _chatHub = chatHub;
+            _hubContext = hubContext;
         }
 
         public async Task ChangeConfigAsync(IEnumerable<ConfigEntity> config)
@@ -31,7 +32,7 @@ namespace TCCBusiness.Services
 
             await _repository.SaveChangesAsync();
 
-            _chatHub.SendConfigs(config);
+            await _hubContext.Clients.All.SendAsync("ConfigChanges", config);
         }
 
         public async Task<IEnumerable<ConfigEntity>> FetchConfigAsync()
