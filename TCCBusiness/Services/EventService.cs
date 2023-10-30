@@ -20,6 +20,12 @@ namespace TCCBusiness.Services
             _hubContext = hubContext;
         }
 
+        public async Task Save(IEnumerable<EventLogEntity> eventLogs)
+        {
+            _repository.Insert(eventLogs);
+            await _repository.SaveChangesAsync();
+        }
+
         public async Task FetchImageAsync() 
         {
             await _hubContext.Clients.All.SendAsync("ImageRequest");

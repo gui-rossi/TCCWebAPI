@@ -16,6 +16,12 @@ namespace TCCWebAPI.Controllers
             _service = service;
         }
 
+        [HttpPost("SaveEventLogs")]
+        public void SaveEventLogs([FromBody] IEnumerable<EventLogEntity> eventLogs)
+        {
+            _service.Save(eventLogs);
+        }
+
         [HttpGet("RequestImage")]
         public void RequestImage()
         {

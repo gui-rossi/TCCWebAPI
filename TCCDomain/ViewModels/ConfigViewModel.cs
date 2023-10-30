@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCCDomain.Entities
+namespace TCCDomain.ViewModels
 {
-    public class ConfigEntity : BaseEntity
+    public class ConfigViewModel
     {
         public int Id { get; set; }
 
@@ -16,8 +16,8 @@ namespace TCCDomain.Entities
 
         public bool Active { get; set; }
 
-        public DateTime StartTime { get; set; }
+        public string StartTime { get; set; }
 
-        public DateTime EndTime { get; set; }
+        public string EndTime { get; set; }
     }
 }

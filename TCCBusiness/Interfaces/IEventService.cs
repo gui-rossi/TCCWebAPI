@@ -28,6 +28,13 @@ namespace TCCBusiness.Interfaces
         Task<IEnumerable<EventLogEntity>> GetHistory();
 
         /// <summary>
+        /// Save event logs
+        /// </summary>
+        /// <param name="eventLogs">logs to save</param>
+        /// <returns></returns>
+        Task Save(IEnumerable<EventLogEntity> eventLogs);
+
+        /// <summary>
         /// Send the image to the app by signalR.
         /// </summary>
         /// <param name="base64Img">Image in base64</param>

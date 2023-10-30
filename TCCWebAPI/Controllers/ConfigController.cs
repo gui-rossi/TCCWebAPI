@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TCCBusiness.Interfaces;
 using TCCDomain.Entities;
+using TCCDomain.ViewModels;
 
 namespace TCCWebAPI.Controllers
 {
@@ -22,7 +23,7 @@ namespace TCCWebAPI.Controllers
         }
 
         [HttpPut("ChangeConfig")]
-        public async Task ModifyConfig([FromBody] IEnumerable<ConfigEntity> configs)
+        public async Task ModifyConfig([FromBody] IEnumerable<ConfigViewModel> configs)
         {
             await _service.ChangeConfigAsync(configs);
         }
