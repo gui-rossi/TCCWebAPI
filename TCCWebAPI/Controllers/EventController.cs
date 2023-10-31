@@ -29,7 +29,7 @@ namespace TCCWebAPI.Controllers
         }
 
         [HttpPost("SendImage")]
-        public void SendImage(string base64Img)
+        public void SendImage([FromBody] string base64Img)
         {
             _service.SendImageAsync(base64Img);
         }
