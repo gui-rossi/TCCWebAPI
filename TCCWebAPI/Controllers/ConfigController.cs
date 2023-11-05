@@ -15,6 +15,7 @@ namespace TCCWebAPI.Controllers
         {
             _service = service;
         }
+        //// Methods called by the App:
 
         [HttpGet("IsApiUp")]
         public bool IsApiUp()
@@ -27,6 +28,8 @@ namespace TCCWebAPI.Controllers
         {
             await _service.ChangeConfigAsync(configs);
         }
+
+        //// Methods called by the raspberry:
 
         [HttpGet("FetchConfigs")]
         public async Task<IEnumerable<ConfigEntity>> GetConfigs()

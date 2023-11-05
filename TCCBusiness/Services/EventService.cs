@@ -48,9 +48,51 @@ namespace TCCBusiness.Services
 
         public async Task SendInfosAsync(IEnumerable<InfoEntity> infos)
         {
+            //// Example Values:
+            //// "Timestamp: 03:53:48+00:00| Latitude = -25.429721833333332| Longitude = -49.26172533333333"
+            //// "Unavailable"
             var gps = infos.Where(i => i.Name == "GPS").FirstOrDefault();
+
+            //// Example Value:
+            //// "59%"
             var battery = infos.Where(i => i.Name == "Battery").FirstOrDefault();
+
+            //// Example Values:
+            //// "Battery" or "Outlet"
+            var powerSource = infos.Where(i => i.Name == "Power").FirstOrDefault();
+
+
             await _hubContext.Clients.All.SendAsync("ReceiveInfos", gps, battery);
+        }
+
+        public async Task NotifyTruckAsync(string base64TruckImg)
+        {
+            await _hubContext.Clients.All.SendAsync("NotifyTruck", base64TruckImg);
+        }
+
+        public async Task NotifyPersonAsync(string base64PersonImg)
+        {
+            await _hubContext.Clients.All.SendAsync("NotifyPerson", base64PersonImg);
+        }
+
+        public async Task NotifyCameraObstructionAsync(string base64Img)
+        {
+            await _hubContext.Clients.All.SendAsync("NotifyCameraObstruction", base64Img);
+        }
+
+        public async Task NotifyPowerLossAsync()
+        {
+            await _hubContext.Clients.All.SendAsync("NotifyPowerLoss");
+        }
+
+        public async Task NotifyFullMemoryAsync()
+        {
+            await _hubContext.Clients.All.SendAsync("NotifyFullMemory");
+        }
+
+        public async Task NotifyGPSMovementAsync()
+        {
+            await _hubContext.Clients.All.SendAsync("NotifyGPSMovement");
         }
     }
 }

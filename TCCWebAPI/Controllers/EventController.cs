@@ -16,10 +16,12 @@ namespace TCCWebAPI.Controllers
             _service = service;
         }
 
-        [HttpPost("SaveEventLogs")]
-        public void SaveEventLogs([FromBody] IEnumerable<EventLogEntity> eventLogs)
+        //// Methods called by the App:
+        
+        [HttpGet("GetHistory")]
+        public async Task<IEnumerable<EventLogEntity>> GetHistory()
         {
-            _service.Save(eventLogs);
+            return await _service.GetHistory();
         }
 
         [HttpGet("RequestImage")]
@@ -28,28 +30,66 @@ namespace TCCWebAPI.Controllers
             _service.FetchImageAsync();
         }
 
-        [HttpPost("SendImage")]
-        public void SendImage([FromBody] string base64Img)
-        {
-            _service.SendImageAsync(base64Img);
-        }
-
         [HttpGet("RequestInfos")]
         public void RequestInfos()
         {
             _service.FetchInfosAsync();
         }
 
-        [HttpGet("SendInfos")]
+        //// Methods called by the raspberry:
+
+        [HttpPost("SaveEventLogs")]
+        public void SaveEventLogs([FromBody] IEnumerable<EventLogEntity> eventLogs)
+        {
+            _service.Save(eventLogs);
+        }
+
+        [HttpPost("SendImage")]
+        public void SendImage([FromBody] string base64Img)
+        {
+            _service.SendImageAsync(base64Img);
+        }
+
+        [HttpPost("SendInfos")]
         public void SendInfos([FromBody] IEnumerable<InfoEntity> infos)
         {
             _service.SendInfosAsync(infos);
         }
 
-        [HttpGet("GetHistory")]
-        public async Task<IEnumerable<EventLogEntity>> GetHistory()
+        [HttpPost("NotifyTruck")]
+        public void NotifyTruck([FromBody] string base64TruckImg)
         {
-            return await _service.GetHistory();
+            _service.NotifyTruckAsync(base64TruckImg);
+        }
+
+        [HttpPost("NotifyPerson")]
+        public void NotifyPerson([FromBody] string base64PersonImg)
+        {
+            _service.NotifyPersonAsync(base64PersonImg);
+        }
+
+        [HttpPost("NotifyCameraObstruction")]
+        public void NotifyCameraObstruction([FromBody] string base64Img)
+        {
+            _service.NotifyCameraObstructionAsync(base64Img);
+        }
+
+        [HttpPost("NotifyFullMemory")]
+        public void NotifyFullMemory()
+        {
+            _service.NotifyFullMemoryAsync();
+        }
+
+        [HttpPost("NotifyPowerLoss")]
+        public void NotifyPowerLoss()
+        {
+            _service.NotifyPowerLossAsync();
+        }
+
+        [HttpPost("NotifyGPSMovement")]
+        public void NotifyGPSMovement()
+        {
+            _service.NotifyGPSMovementAsync();
         }
     }
 }

@@ -26,6 +26,18 @@ namespace TCCBusiness.Interfaces
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<EventLogEntity>> GetHistory();
+        Task NotifyCameraObstructionAsync(string base64Img);
+        Task NotifyFullMemoryAsync();
+        Task NotifyGPSMovementAsync();
+        Task NotifyPersonAsync(string base64PersonImg);
+        Task NotifyPowerLossAsync();
+
+        /// <summary>
+        /// Notify truck detection.
+        /// </summary>
+        /// <param name="base64TruckImg">Truck image</param>
+        /// <returns></returns>
+        Task NotifyTruckAsync(string base64TruckImg);
 
         /// <summary>
         /// Save event logs
