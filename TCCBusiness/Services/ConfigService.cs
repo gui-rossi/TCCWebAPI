@@ -16,9 +16,9 @@ namespace TCCBusiness.Services
     internal class ConfigService : IConfigService
     {
         private readonly IGenericRepository<ConfigEntity> _repository;
-        private readonly IHubContext<ChatHub> _hubContext;
+        private readonly IChatHub _hubContext;
 
-        public ConfigService(IGenericRepository<ConfigEntity> repository, IHubContext<ChatHub> hubContext)
+        public ConfigService(IGenericRepository<ConfigEntity> repository, IChatHub hubContext)
         {
             _repository = repository;
             _hubContext = hubContext;
@@ -43,7 +43,7 @@ namespace TCCBusiness.Services
 
             await _repository.SaveChangesAsync();
 
-            await _hubContext.Clients.All.SendAsync("ConfigChanges", configViewModelList);
+            await _hubContext.SendChangesToRasp(configViewModelList);
         }
 
         public async Task<IEnumerable<ConfigEntity>> FetchConfigAsync()

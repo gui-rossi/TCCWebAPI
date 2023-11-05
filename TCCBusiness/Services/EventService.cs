@@ -8,14 +8,12 @@ namespace TCCBusiness.Services
 {
     public class EventService : IEventService
     {
-        private readonly IChatHub _chatHub;
         private readonly IGenericRepository<EventLogEntity> _repository;
-        private readonly IHubContext<ChatHub> _hubContext;
+        private readonly IChatHub _hubContext;
 
 
-        public EventService(IChatHub chatHub, IGenericRepository<EventLogEntity> repository, IHubContext<ChatHub> hubContext)
+        public EventService(IGenericRepository<EventLogEntity> repository, IChatHub hubContext)
         {
-            _chatHub = chatHub;
             _repository = repository;
             _hubContext = hubContext;
         }
@@ -26,16 +24,6 @@ namespace TCCBusiness.Services
             await _repository.SaveChangesAsync();
         }
 
-        public async Task FetchImageAsync() 
-        {
-            await _hubContext.Clients.All.SendAsync("ImageRequest");
-        }
-
-        public async Task FetchInfosAsync()
-        {
-            await _hubContext.Clients.All.SendAsync("InfoRequest");
-        }
-
         public async Task<IEnumerable<EventLogEntity>> GetHistory()
         {
             return await _repository.SelectAllAsync();
@@ -43,7 +31,7 @@ namespace TCCBusiness.Services
 
         public async Task SendImageAsync(string base64Img)
         {
-            await _hubContext.Clients.All.SendAsync("ReceiveImage", base64Img);
+            await _hubContext.SendImageToUI(base64Img);
         }
 
         public async Task SendInfosAsync(IEnumerable<InfoEntity> infos)
@@ -62,37 +50,47 @@ namespace TCCBusiness.Services
             var powerSource = infos.Where(i => i.Name == "Power").FirstOrDefault();
 
 
-            await _hubContext.Clients.All.SendAsync("ReceiveInfos", gps, battery);
+            await _hubContext.SendInfosToUI(gps?.Value ?? "", battery?.Value ?? "", powerSource?.Value ?? "");
         }
 
         public async Task NotifyTruckAsync(string base64TruckImg)
         {
-            await _hubContext.Clients.All.SendAsync("NotifyTruck", base64TruckImg);
+            await _hubContext.NotifyTruck(base64TruckImg);
         }
 
         public async Task NotifyPersonAsync(string base64PersonImg)
         {
-            await _hubContext.Clients.All.SendAsync("NotifyPerson", base64PersonImg);
+            await _hubContext.NotifyPerson(base64PersonImg);
         }
 
         public async Task NotifyCameraObstructionAsync(string base64Img)
         {
-            await _hubContext.Clients.All.SendAsync("NotifyCameraObstruction", base64Img);
+            await _hubContext.NotifyCameraObstruction(base64Img);
         }
 
         public async Task NotifyPowerLossAsync()
         {
-            await _hubContext.Clients.All.SendAsync("NotifyPowerLoss");
+            await _hubContext.NotifyPowerLoss();
         }
 
         public async Task NotifyFullMemoryAsync()
         {
-            await _hubContext.Clients.All.SendAsync("NotifyFullMemory");
+            await _hubContext.NotifyFullMemory();
         }
 
         public async Task NotifyGPSMovementAsync()
         {
-            await _hubContext.Clients.All.SendAsync("NotifyGPSMovement");
+            await _hubContext.NotifyGPSMovement();
+        }
+
+        public async Task FetchImageAsync()
+        {
+            await _hubContext.RequestImageToRaspberry();
+        }
+
+        public async Task FetchInfosAsync()
+        {
+            await _hubContext.RequestInfosToRaspberry();
         }
     }
 }
