@@ -17,11 +17,13 @@ namespace TCCBusiness.Services
     {
         private readonly IGenericRepository<ConfigEntity> _repository;
         private readonly IChatHub _hubContext;
+        private readonly IHubContext<ChatHub> _hubContext2;
 
-        public ConfigService(IGenericRepository<ConfigEntity> repository, IChatHub hubContext)
+        public ConfigService(IGenericRepository<ConfigEntity> repository, IChatHub hubContext, IHubContext<ChatHub> hubContext2)
         {
             _repository = repository;
             _hubContext = hubContext;
+            _hubContext2 = hubContext2;
         }
 
         public async Task ChangeConfigAsync(IEnumerable<ConfigViewModel> configViewModelList)
