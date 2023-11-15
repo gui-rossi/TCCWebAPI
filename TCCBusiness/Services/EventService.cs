@@ -26,7 +26,9 @@ namespace TCCBusiness.Services
 
         public async Task<IEnumerable<EventLogEntity>> GetHistory()
         {
-            return await _repository.SelectAllAsync();
+            var rval = (await _repository.SelectAllAsync()).OrderByDescending(x => x.TimeStamp);
+
+            return rval;
         }
 
         public async Task SendImageAsync(string base64Img)
