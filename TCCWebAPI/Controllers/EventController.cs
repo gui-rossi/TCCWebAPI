@@ -69,9 +69,9 @@ namespace TCCWebAPI.Controllers
         }
 
         [HttpPost("NotifyCameraObstruction")]
-        public void NotifyCameraObstruction([FromBody] string base64Img)
+        public void NotifyCameraObstruction()
         {
-            _service.NotifyCameraObstructionAsync(base64Img);
+            _service.NotifyCameraObstructionAsync();
         }
 
         [HttpPost("NotifyFullMemory")]

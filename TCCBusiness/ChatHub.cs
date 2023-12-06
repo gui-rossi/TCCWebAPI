@@ -63,9 +63,9 @@ namespace TCCBusiness
             await _hubContext.Clients.All.SendAsync("NotifyFullMemory");
         }
 
-        public async Task NotifyCameraObstruction(string base64Img)
+        public async Task NotifyCameraObstruction()
         {
-            await _hubContext.Clients.All.SendAsync("NotifyCameraObstruction", base64Img);
+            await _hubContext.Clients.All.SendAsync("NotifyCameraObstruction");
         }
 
         public async Task NotifyPerson(string base64Img)

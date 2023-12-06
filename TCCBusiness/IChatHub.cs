@@ -26,7 +26,7 @@ namespace TCCBusiness
 
         Task NotifyFullMemory();
 
-        Task NotifyCameraObstruction(string base64Img);
+        Task NotifyCameraObstruction();
 
         Task NotifyPerson(string base64Img);
 

@@ -65,9 +65,9 @@ namespace TCCBusiness.Services
             await _hubContext.NotifyPerson(base64PersonImg);
         }
 
-        public async Task NotifyCameraObstructionAsync(string base64Img)
+        public async Task NotifyCameraObstructionAsync()
         {
-            await _hubContext.NotifyCameraObstruction(base64Img);
+            await _hubContext.NotifyCameraObstruction();
         }
 
         public async Task NotifyPowerLossAsync()
