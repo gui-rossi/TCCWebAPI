@@ -27,7 +27,7 @@ namespace TCCBusiness
         //IMPLEMENTAR NA RASP
         public async Task RequestInfosToRaspberry()
         {
-            await _hubContext.Clients.All.SendAsync("ReceiveInfos");
+            await _hubContext.Clients.All.SendAsync("RequestInfos");
         }
 
         //RASP -> UI
